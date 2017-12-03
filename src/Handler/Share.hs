@@ -26,16 +26,10 @@ menu = [whamlet|
             <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
 
         <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
-            <ul .nav .navbar-nav .navbar-left>
-                <li>
-                    <a>
-                        Perfil
             <ul .nav .navbar-nav .navbar-right>
                 <li>
                     <a href=@{CadUserR}>
                         Cadastrar-se
-                    <form action=@{LogoutR}} method=post>
-                        <input type="submit" value="Logout">
                 <li>
                     <a href=@{LoginR}>
                         Login
@@ -53,20 +47,6 @@ getShareR = do
         setTitle . fromString $ "Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
         addScriptRemote "https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
-        toWidget [julius|
-          $(document).mouseup(function (e) {
-            var div = $(".login");
-            if (!div.is(e.target) && div.has(e.target).length === 0) {
-                if (div.is(':visible')) {
-                    div.toggle("slow");
-                }
-            }
-          });
-
-          function showlogin(){
-            $(".login").show("slow");
-          }
-        |]
         toWidget $ $(luciusFile "templates/share.lucius")
         $(whamletFile "templates/share.hamlet")
         

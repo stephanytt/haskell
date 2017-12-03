@@ -65,3 +65,21 @@ getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livr
                 Categoria: #{livroCategoria resultlivro}
             
         |]
+
+--Route:
+-- /livro/buscaLivro       BuscaLivroR     GET
+
+--getBuscaLivroR :: Handler Html
+--getBuscaLivroR = do
+  --  (widget, enctype) <- generateFormPost formLivroNome
+   -- defaultLayout $ do
+       -- [whamlet|
+        --    <form action=@{ShareR} method=post enctype=#{enctype}>
+          --      ^{widget}
+            --    <input type="submit" value="Buscar">
+       -- |]
+--formLivroNome :: Form LivroNome 
+--formLivroNome = renderDivs $ LivroNome
+  --  <$> areq textField  "Nome: " Nothing
+  
+getTuaRotaR = undefined
