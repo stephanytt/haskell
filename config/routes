@@ -19,4 +19,4 @@
 /serie/#SerieId/apagar  ApagarSerieR    POST
 
 /livro/cadastrar        CadLivroR       GET POST
-
+/livro/#LivroId/paginalivro  VerLivroR  GET

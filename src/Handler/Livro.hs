@@ -41,6 +41,27 @@ postCadLivroR = do
     case result of 
         FormSuccess livro -> do
             idLivro<- runDB $ insert livro
-            redirect ShareR
+            redirect (VerLivroR idLivro)
         _ -> redirect ShareR
-    
+
+getVerLivroR :: LivroId -> Handler Html
+getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livro
+    resultlivro <- runDB $ get404 livroid
+    defaultLayout $ do
+        [whamlet|
+            <h1>
+                Livro: #{livroNome resultlivro}
+            <p> 
+                Autor: #{livroAutor resultlivro}
+            <p> 
+                ISBN: #{livroIsbn resultlivro}
+            <p> 
+                Capa Livro: <img src=#{livroCapalivro resultlivro}>
+            <p> 
+                Banner Livro: <img src=#{livroBannerlivro resultlivro}>
+            <p> 
+                Descrição: #{livroDescricao resultlivro}
+            <p>
+                Categoria: #{livroCategoria resultlivro}
+            
+        |]
