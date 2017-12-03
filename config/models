@@ -1,0 +1,33 @@
+Serie json
+    nome    Text
+    genero  Text
+    qtTemp  Int
+    ano     Int
+    deriving Show
+
+UsuarioSerie
+    serieId SerieId
+    usuarioId UsuarioId
+    vistoEm Day
+    deriving Show
+
+Usuario json
+    email Text
+    senha Text
+    nome Text
+    cpf Text
+    cidade Text
+    estado Text
+    UniqueField cpf email
+    deriving Show
+    
+Livro json
+    codigo Text
+    nome   Text
+    autor  Text
+    isbn   Int
+    capalivro Text
+    bannerlivro Text
+    descricao   Text
+    classe       Int
+    categoria   Text

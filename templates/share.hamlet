@@ -1,0 +1,46 @@
+^{menu}
+<main>
+    <div .container-fluid>
+        <div .row>
+            <div .col-md-12>
+                <div .jumbotron>
+                    <h1 .tit>
+                        Compartilhando histórias
+        <div .row>
+            <div .col-md-4>
+                <div .thumbnail>
+                    <img .ico src=@{StaticR img_emprestimo_png}>
+                    <div .caption>
+                        <h3>
+                            Busque livros.
+            
+            <div .col-md-4>
+                <div .thumbnail>
+                    <img .ico src=@{StaticR img_doacao_png}>
+                    <div .caption>
+                        <h3>
+                            Ofereça livros.
+                
+            <div .col-md-4>
+                <div .thumbnail>
+                    <img .ico src=@{StaticR img_troca_png}>
+                    <div .caption>
+                        <h3>
+                            Ajude e seja ajudado.
+
+<footer>
+    <nav .navbar .navbar-inverse .navbar-static-bottom>
+        <div .container-fluid>
+            <p .navbar-text .navbar-right>Sharebooks 2017. Todos os direitos reservados.&nbsp;</p>
+
+<div .login>
+    <h2>
+        Login
+    <p>Usuário:
+    <p>Senha:
+    <p>
+        <a>
+            Esqueci minha senha
+        <br>
+        <a>
+            Novo cadastro

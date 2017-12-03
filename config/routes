@@ -1,0 +1,22 @@
+/static StaticR Static appStatic
+
+/share                              ShareR          GET
+/share/sobre                        SobreR          GET
+/share/usuario/cadastrar            CadUserR        GET POST
+/share/usuario/#UsuarioId/perfil    PerfilUserR     GET
+
+/share/usuario/listar               ListarUserR     GET
+/share/usuario/#UsuarioId/apagar    ApagarUserR     POST
+
+/share/login                        LoginR          GET POST
+/logout                             LogoutR         POST
+
+/assistir                           AssistirR       GET POST
+
+/serie/cadastrar    CadSerieR   GET POST
+/serie/#SerieId/perfil  PerfilSerieR    GET
+/serie/listar           ListarSerieR    GET
+/serie/#SerieId/apagar  ApagarSerieR    POST
+
+/livro/cadastrar        CadLivroR       GET POST
+
