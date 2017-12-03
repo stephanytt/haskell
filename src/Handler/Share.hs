@@ -26,16 +26,16 @@ menu = [whamlet|
             <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
 
         <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
+            <ul .nav .navbar-nav .navbar-left>
+                <li>
+                    <a href=@{SobreR}>
+                        Sobre Nós
             <ul .nav .navbar-nav .navbar-right>
                 <li>
                     <a href=@{CadUserR}>
                         Cadastrar-se
                 <li>
                     <a href=@{LoginR}>
-                        Login
-                
-                <li>
-                    <a onclick="showlogin()">
                         Entrar
 |]
 

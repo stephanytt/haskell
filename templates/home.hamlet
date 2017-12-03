@@ -4,3 +4,16 @@
     <li>
         <a href=@{CadSerieR}>
             Cadastrar Serie
+
+<h1>
+    Nome: #{usuarioNome usuario}
+<h2>
+    Email: #{usuarioEmail usuario}
+<h2>
+    CPF: #{usuarioCpf usuario}
+<h2>
+    Cidade: #{usuarioCidade usuario}
+<h2>
+    Estado: #{usuarioEstado usuario}
+<h2>
+    ^{tabelaSerie usuarioid}

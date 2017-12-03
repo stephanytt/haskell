@@ -9,7 +9,7 @@
 /usuario/#UsuarioId/apagar      ApagarUserR     POST
 
 /login                          LoginR          GET POST
-/logout                         LogoutR         POST
+/logout                         LogoutR         GET
 
 /assistir                       AssistirR       GET POST
 

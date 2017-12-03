@@ -1,0 +1,24 @@
+^{menuInterno}
+<main>
+    <div .container-fluid>
+        <div .row>
+            <div .col-md-2>
+                <img src=@{StaticR img_perfil_png} style=max-width:100% alt=Perfil>
+            <div .col-md-5>
+                <h1>
+                    Perfil
+                <h2>
+                    #{usuarioNome usuario}
+                <h3>
+                    #{usuarioEmail usuario}
+            <div .col-md-5>
+                <iframe
+                    width=100%
+                    height=450
+                    frameborder=0 style=border:0
+                    src=https://www.google.com/maps/embed/v1/place?key=AIzaSyASyT70pbnOqbTVWFnMG17yDFzw_kWZXNo&q=#{usuarioCidade usuario}+#{usuarioEstado usuario} allowfullscreen>
+                    
+<footer>
+    <nav .navbar .navbar-inverse .navbar-fixed-bottom>
+        <div .container-fluid>
+            <p .navbar-text .navbar-right>Sharebooks 2017. Todos os direitos reservados.&nbsp;</p>

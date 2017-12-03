@@ -24,6 +24,10 @@ menu = [whamlet|
             <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
 
         <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
+            <ul .nav .navbar-nav .navbar-left>
+                <li>
+                    <a href=@{SobreR}>
+                        Sobre Nós
             <ul .nav .navbar-nav .navbar-right>
                 <li>
                     <a href=@{CadUserR}>
@@ -88,7 +92,7 @@ postLoginR = do
                     redirect (PerfilUserR uid)
         _ -> redirect ShareR
 
-postLogoutR :: Handler Html
-postLogoutR = do 
+getLogoutR :: Handler Html
+getLogoutR = do 
     deleteSession "_USR"
     redirect ShareR

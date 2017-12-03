@@ -35,6 +35,10 @@ menu = [whamlet|
             <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
 
         <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
+            <ul .nav .navbar-nav .navbar-left>
+                <li>
+                    <a href=@{SobreR}>
+                        Sobre Nós
             <ul .nav .navbar-nav .navbar-right>
                 <li>
                     <a href=@{CadUserR}>
@@ -60,8 +64,8 @@ menuInterno = [whamlet|
         <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
             <ul .nav .navbar-nav .navbar-right>
                 <li>
-                    <form action=@{LogoutR}} method=post>
-                        <input type="submit" value="Logout">
+                    <a href=@{LogoutR}>
+                        Sair
 |]
 
 getCadUserR :: Handler Html
@@ -113,20 +117,8 @@ getPerfilUserR usuarioid = do
     defaultLayout $ do
         setTitle . fromString $ "Perfil | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
-        [whamlet|
-            <h1>
-                Nome: #{usuarioNome usuario}
-            <h2>
-                Email: #{usuarioEmail usuario}
-            <h2>
-                CPF: #{usuarioCpf usuario}
-            <h2>
-                Cidade: #{usuarioCidade usuario}
-            <h2>
-                Estado: #{usuarioEstado usuario}
-            <h2>
-                ^{tabelaSerie usuarioid}
-        |]
+        toWidget $ $(luciusFile "templates/cadUser.lucius")
+        $(whamletFile "templates/perfil.hamlet")
 
 --Select * from Usuario
 getListarUserR :: Handler Html
