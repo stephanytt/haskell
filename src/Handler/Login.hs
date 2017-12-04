@@ -89,6 +89,7 @@ postLoginR = do
                     redirect LoginR
                 Just (Entity uid (Usuario e _ n c d s)) -> do 
                     setSession "_USR" (pack (show $ Usuario e "" n c d s))
+                    setSession "IdUser" (pack (show $ uid ))
                     redirect (PerfilUserR uid)
         _ -> redirect ShareR
 

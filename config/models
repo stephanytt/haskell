@@ -31,3 +31,19 @@ Livro json
     descricao   Text
     classe       Int
     categoria   Text
+    deriving Show
+
+Solicitacao json
+    solicitado  UsuarioId
+    solicitante UsuarioId
+    livrosolicitado LivroId
+    datasolicitacao  Day
+    deriving Show
+    
+Estante json
+    usuario UsuarioId
+    livro LivroId
+    estado  Text
+    doa Int
+    deriving Show
+    

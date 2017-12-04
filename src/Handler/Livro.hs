@@ -10,6 +10,8 @@ import  Import
 import  Text.Lucius
 import  Text.Julius
 import  Database.Persist.Postgresql
+import  Data.Maybe
+import  qualified Prelude as P
 
 
 formLivro :: Form Livro
@@ -41,6 +43,9 @@ postCadLivroR = do
     case result of 
         FormSuccess livro -> do
             idLivro<- runDB $ insert livro
+            (Just user) <- lookupSession "IdUser"
+            Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
+            eid <- runDB $ insert (Estante userId idLivro "Bom" 0) :: Handler EstanteId
             redirect (VerLivroR idLivro)
         _ -> redirect ShareR
 
@@ -63,12 +68,9 @@ getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livr
                 Descrição: #{livroDescricao resultlivro}
             <p>
                 Categoria: #{livroCategoria resultlivro}
-            <button type=button>    
-                Troca
-            <button type=button>    
+            <a href= >    
                 Doação
-            <button type=button>    
-                Empréstimo
+          
         |]
 
 --Route:

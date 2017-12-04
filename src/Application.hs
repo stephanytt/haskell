@@ -46,6 +46,7 @@ import Handler.UsuarioSerie
 import Handler.Livro
 import Handler.Pesquisa
 import Handler.Resultado
+import Handler.Solicitacao
 
 -- This line actually creates our YesodDispatch instance. It is the second half
 -- of the call to mkYesodData which occurs in Foundation.hs. Please see the
