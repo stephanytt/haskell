@@ -17,10 +17,7 @@ postResultR = do
     ((result,_),_) <- runFormPost formPesquisa
     case result of  
         FormSuccess (livropesquisado,_) -> do
-            resultlivro <- runDB $ rawSql
-                ("Select ??\
-                \FROM livro\
-                \WHERE livro.nome = '" <> (pack $ show livropesquisado) <>"'") [] :: Handler [(Entity Livro)]
+            resultlivro <- selectLivros ("%"<>livropesquisado<>"%")
             --faz o lambda pra retornar as infos do livro(id, livro e suas infos)
             livros <- sequence $ map (\livro -> return (entityKey livro, entityVal livro)) resultlivro
             defaultLayout $ do
@@ -35,3 +32,6 @@ postResultR = do
                                 Categoria : #{livroCategoria livro}
                 |]
         _ -> redirect PesquisaR        
+selectLivros :: Text -> Handler [Entity Livro]
+selectLivros t = runDB $ rawSql s [toPersistValue t]
+    where s = "SELECT ?? FROM livro WHERE nome LIKE ? "
