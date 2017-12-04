@@ -63,7 +63,12 @@ getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livr
                 Descrição: #{livroDescricao resultlivro}
             <p>
                 Categoria: #{livroCategoria resultlivro}
-            
+            <button type=button>    
+                Troca
+            <button type=button>    
+                Doação
+            <button type=button>    
+                Empréstimo
         |]
 
 --Route:
