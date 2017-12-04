@@ -21,53 +21,6 @@ formUser = renderDivs $ Usuario
         <*> areq textField  "Cidade: " Nothing
         <*> areq textField  "Estado: " Nothing
 
-menu :: Widget
-menu = [whamlet|
-    <nav .navbar .navbar-default .navbar-fixed-top>
-      <div .container-fluid>
-        <div .navbar-header>
-          <button type="button" .navbar-toggle .collapsed data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span .sr-only>Toggle navigation</span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-          <a .navbar-brand href=@{ShareR}>
-            <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
-
-        <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
-            <ul .nav .navbar-nav .navbar-left>
-                <li>
-                    <a href=@{SobreR}>
-                        Sobre Nós
-            <ul .nav .navbar-nav .navbar-right>
-                <li>
-                    <a href=@{CadUserR}>
-                        Cadastrar-se
-                <li>
-                    <a href=@{LoginR}>
-                        Login
-|]
-
-menuInterno :: Widget
-menuInterno = [whamlet|
-    <nav .navbar .navbar-default .navbar-fixed-top>
-      <div .container-fluid>
-        <div .navbar-header>
-          <button type="button" .navbar-toggle .collapsed data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span .sr-only>Toggle navigation</span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-          <a .navbar-brand href=@{ShareR}>
-            <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
-
-        <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
-            <ul .nav .navbar-nav .navbar-right>
-                <li>
-                    <a href=@{LogoutR}>
-                        Sair
-|]
-
 getCadUserR :: Handler Html
 getCadUserR = do 
     (widget,enctype) <- generateFormPost formUser
@@ -75,6 +28,7 @@ getCadUserR = do
         setTitle . fromString $ "Cadastre-se | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $ $(luciusFile "templates/cadUser.lucius")
+        $(whamletFile "templates/menu.hamlet")
         $(whamletFile "templates/cadUser.hamlet")
 
 postCadUserR :: Handler Html
@@ -118,6 +72,7 @@ getPerfilUserR usuarioid = do
         setTitle . fromString $ "Perfil | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $ $(luciusFile "templates/cadUser.lucius")
+        $(whamletFile "templates/menuinterno.hamlet")
         $(whamletFile "templates/perfil.hamlet")
 
 --Select * from Usuario

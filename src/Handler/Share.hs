@@ -12,33 +12,6 @@ import  Text.Julius
 import  Database.Persist.Postgresql
 import qualified Prelude as P
 
-menu :: Widget
-menu = [whamlet|
-    <nav .navbar .navbar-default .navbar-fixed-top>
-      <div .container-fluid>
-        <div .navbar-header>
-          <button type="button" .navbar-toggle .collapsed data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span .sr-only>Toggle navigation</span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-          <a .navbar-brand href=@{ShareR}>
-            <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
-
-        <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
-            <ul .nav .navbar-nav .navbar-left>
-                <li>
-                    <a href=@{SobreR}>
-                        Sobre Nós
-            <ul .nav .navbar-nav .navbar-right>
-                <li>
-                    <a href=@{CadUserR}>
-                        Cadastrar-se
-                <li>
-                    <a href=@{LoginR}>
-                        Entrar
-|]
-
 getShareR :: Handler Html
 getShareR = do
     sess <- lookupSession "_USR"
@@ -48,6 +21,7 @@ getShareR = do
         addStylesheet $ StaticR css_bootstrap_css
         addScriptRemote "https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
         toWidget $ $(luciusFile "templates/share.lucius")
+        $(whamletFile "templates/menu.hamlet")
         $(whamletFile "templates/share.hamlet")
         
 getSobreR :: Handler Html
@@ -56,4 +30,5 @@ getSobreR = do
         setTitle . fromString $ "Sobre Nós | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $ $(luciusFile "templates/sobre.lucius")
+        $(whamletFile "templates/menu.hamlet")
         $(whamletFile "templates/sobre.hamlet")

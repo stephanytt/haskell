@@ -10,33 +10,6 @@ import Import
 import  Text.Lucius
 import Database.Persist.Postgresql
 
-menu :: Widget
-menu = [whamlet|
-    <nav .navbar .navbar-default .navbar-fixed-top>
-      <div .container-fluid>
-        <div .navbar-header>
-          <button type="button" .navbar-toggle .collapsed data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span .sr-only>Toggle navigation</span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-            <span .icon-bar></span>
-          <a .navbar-brand href=@{ShareR}>
-            <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
-
-        <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
-            <ul .nav .navbar-nav .navbar-left>
-                <li>
-                    <a href=@{SobreR}>
-                        Sobre Nós
-            <ul .nav .navbar-nav .navbar-right>
-                <li>
-                    <a href=@{CadUserR}>
-                        Cadastrar-se
-                <li>
-                    <a href=@{LoginR}>
-                        Login
-|]
-
 formLogin :: Form (Text, Text)
 formLogin = renderDivs $ (,) 
         <$> areq emailField "Email: " Nothing
@@ -50,8 +23,8 @@ getLoginR = do
         setTitle . fromString $ "Entrar | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
         toWidget $ $(luciusFile "templates/cadUser.lucius")
+        $(whamletFile "templates/menu.hamlet")
         [whamlet|
-            ^{menu}
             <main>
                 <div .container-fluid>
                     <div .row>
