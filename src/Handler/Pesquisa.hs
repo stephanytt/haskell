@@ -22,7 +22,7 @@ getPesquisaR = do
         (widget,enctype) <- generateFormPost formPesquisa
         defaultLayout $ do 
                 [whamlet|
-                        <form method=post enctype=#{enctype}>
+                        <form action=@{ResultR} method=post enctype=#{enctype}>
                                 ^{widget}
                                 <input type="submit">
                 |]

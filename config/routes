@@ -21,3 +21,4 @@
 /livro/cadastrar        CadLivroR       GET POST
 /livro/#LivroId/paginalivro  VerLivroR  GET
 /pesquisa                   PesquisaR   GET 
+/resultado                  ResultR     POST
