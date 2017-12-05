@@ -10,6 +10,8 @@
                     #{usuarioNome usuario}
                 <h3>
                     #{usuarioEmail usuario}
+                <h3>
+                    #{usuarioCidade usuario} - #{usuarioEstado usuario}
             <div .col-md-5>
                 <iframe
                     width=100%

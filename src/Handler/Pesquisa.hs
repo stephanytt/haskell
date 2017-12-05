@@ -10,6 +10,7 @@ import  Import
 import  Text.Lucius
 import  Text.Julius
 import  Database.Persist.Postgresql
+import  qualified Prelude as P
 
 
 formPesquisa :: Form (Text,Text)
@@ -20,6 +21,8 @@ formPesquisa = renderDivs $ (,)
 getPesquisaR :: Handler Html
 getPesquisaR = do
         (widget,enctype) <- generateFormPost formPesquisa
+        (Just user) <- lookupSession "IdUser"
+        Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
         defaultLayout $ do 
                 setTitle . fromString $ "Pesquisar Livro | Sharebooks - Compartilhando histórias"
                 addStylesheet $ StaticR css_bootstrap_css

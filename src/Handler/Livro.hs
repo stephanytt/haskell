@@ -29,6 +29,8 @@ formLivro = renderDivs $ Livro
 getCadLivroR :: Handler Html
 getCadLivroR = do
     (widget,enctype) <- generateFormPost formLivro 
+    (Just user) <- lookupSession "IdUser"
+    Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
     defaultLayout $ do
         setTitle . fromString $ "Cadastro de Livro | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
@@ -61,6 +63,8 @@ postCadLivroR = do
 getVerLivroR :: LivroId -> Handler Html
 getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livro
     resultlivro <- runDB $ get404 livroid
+    (Just user) <- lookupSession "IdUser"
+    Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
     defaultLayout $ do
         setTitle . fromString $ "Livro | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
@@ -79,9 +83,9 @@ getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livr
                         <p> 
                             ISBN: #{livroIsbn resultlivro}
                         <p> 
-                            Capa Livro: <img src=#{livroCapalivro resultlivro} style="max-width:100%;">
+                            Capa Livro: <img src=#{livroCapalivro resultlivro} style="max-width:100$">
                         <p> 
-                            Banner Livro: <img src=#{livroBannerlivro resultlivro} style="max-width:100%;">
+                            Banner Livro: <img src=#{livroBannerlivro resultlivro} style="max-width:100$">
                         <p> 
                             Descrição: #{livroDescricao resultlivro}
                         <p>

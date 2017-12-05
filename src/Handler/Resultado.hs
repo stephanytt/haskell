@@ -11,10 +11,13 @@ import  Text.Lucius
 import  Text.Julius
 import  Database.Persist.Postgresql
 import  Handler.Pesquisa
+import  qualified Prelude as P
 
 postResultR :: Handler Html
 postResultR = do 
     ((result,_),_) <- runFormPost formPesquisa
+    (Just user) <- lookupSession "IdUser"
+    Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
     case result of  
         FormSuccess (livropesquisado,_) -> do
             resultlivro <- selectLivros ("%"<>livropesquisado<>"%")

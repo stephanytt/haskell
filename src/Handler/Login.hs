@@ -30,7 +30,9 @@ getLoginR = do
                     <div .row>
                         <div .col-md-4>
                             <p>
-                                
+                                $maybe mensa <- msg
+                                    ^{mensa}
+
                         <div .col-md-4>
                             <form action=@{LoginR} method=post enctype=#{enctype}>
                                 ^{widget}
@@ -63,7 +65,8 @@ postLoginR = do
                 Just (Entity uid (Usuario e _ n c d s)) -> do 
                     setSession "_USR" (pack (show $ Usuario e "" n c d s))
                     setSession "IdUser" (pack (show $ uid ))
-                    redirect (PerfilUserR uid)
+                    --redirect (PerfilUserR uid)
+                    redirect (PesquisaR)
         _ -> redirect ShareR
 
 getLogoutR :: Handler Html

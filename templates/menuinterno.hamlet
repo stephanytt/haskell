@@ -6,11 +6,14 @@
         <span .icon-bar></span>
         <span .icon-bar></span>
         <span .icon-bar></span>
-      <a .navbar-brand href=@{ShareR}>
+      <a .navbar-brand href=@{PesquisaR}>
         <img src=@{StaticR img_sharebooks_png} alt="Sharebooks" width="20%">
 
     <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
         <ul .nav .navbar-nav .navbar-right>
+            <li>
+                <a href=@{PerfilUserR userId}>
+                    Meu Perfil
             <li>
                 <a href=@{LogoutR}>
                     Sair

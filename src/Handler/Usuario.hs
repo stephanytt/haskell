@@ -42,7 +42,7 @@ postCadUserR = do
         
 tabelaSerie :: UsuarioId -> Widget
 tabelaSerie usuarioid = do
-    -- Handler ([Entity uid usuarioSerie])
+    --Handler ([Entity uid usuarioSerie])
     usuarioSerie <- handlerToWidget $ runDB $ selectList [UsuarioSerieUsuarioId ==. usuarioid] 
                                                          [Asc UsuarioSerieVistoEm]
     series <- handlerToWidget $ sequence $ fmap (\(Entity _ usuarioSerie) -> runDB $ get404 $ usuarioSerieSerieId usuarioSerie) usuarioSerie
@@ -68,6 +68,8 @@ tabelaSerie usuarioid = do
 getPerfilUserR :: UsuarioId -> Handler Html
 getPerfilUserR usuarioid = do
     usuario <- runDB $ get404 usuarioid
+    (Just user) <- lookupSession "IdUser"
+    Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
     defaultLayout $ do
         setTitle . fromString $ "Perfil | Sharebooks - Compartilhando histórias"
         addStylesheet $ StaticR css_bootstrap_css
