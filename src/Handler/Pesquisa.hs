@@ -21,9 +21,19 @@ getPesquisaR :: Handler Html
 getPesquisaR = do
         (widget,enctype) <- generateFormPost formPesquisa
         defaultLayout $ do 
+                setTitle . fromString $ "Pesquisar Livro | Sharebooks - Compartilhando histórias"
+                addStylesheet $ StaticR css_bootstrap_css
+                toWidget $ $(luciusFile "templates/cadUser.lucius")
+                $(whamletFile "templates/menuinterno.hamlet")
                 [whamlet|
-                        <form action=@{ResultR} method=post enctype=#{enctype}>
-                                ^{widget}
-                                <input type="submit">
+                        <main>
+                                <div .container-fluid>
+                                        <div .row>
+                                                <div .col-md-4>
+                                                        <p>
+                                                <div .col-md-4>
+                                                        <form action=@{ResultR} method=post enctype=#{enctype}>
+                                                                ^{widget}
+                                                                <input type="submit" value="Pesquisar">
                 |]
                 

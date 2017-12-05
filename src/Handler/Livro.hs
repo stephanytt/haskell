@@ -30,10 +30,19 @@ getCadLivroR :: Handler Html
 getCadLivroR = do
     (widget,enctype) <- generateFormPost formLivro 
     defaultLayout $ do
-        [whamlet|  
-            <form action=@{CadLivroR} method=post enctype=#{enctype}>
-                ^{widget}
-                <input type="submit">
+        setTitle . fromString $ "Cadastro de Livro | Sharebooks - Compartilhando histórias"
+        addStylesheet $ StaticR css_bootstrap_css
+        toWidget $ $(luciusFile "templates/cadUser.lucius")
+        $(whamletFile "templates/menuinterno.hamlet")
+        [whamlet|
+            <div .container-fluid>
+                <div .row>
+                    <div .col-md-4>
+                        <p>
+                    <div .col-md-4>
+                        <form action=@{CadLivroR} method=post enctype=#{enctype}>
+                            ^{widget}
+                            <input type="submit">
         |]
 
 postCadLivroR :: Handler Html
@@ -53,23 +62,32 @@ getVerLivroR :: LivroId -> Handler Html
 getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livro
     resultlivro <- runDB $ get404 livroid
     defaultLayout $ do
+        setTitle . fromString $ "Livro | Sharebooks - Compartilhando histórias"
+        addStylesheet $ StaticR css_bootstrap_css
+        toWidget $ $(luciusFile "templates/cadUser.lucius")
+        $(whamletFile "templates/menuinterno.hamlet")
         [whamlet|
-            <h1>
-                Livro: #{livroNome resultlivro}
-            <p> 
-                Autor: #{livroAutor resultlivro}
-            <p> 
-                ISBN: #{livroIsbn resultlivro}
-            <p> 
-                Capa Livro: <img src=#{livroCapalivro resultlivro}>
-            <p> 
-                Banner Livro: <img src=#{livroBannerlivro resultlivro}>
-            <p> 
-                Descrição: #{livroDescricao resultlivro}
-            <p>
-                Categoria: #{livroCategoria resultlivro}
-            <a href= >    
-                Doação
+            <div .container-fluid>
+                <div .row>
+                    <div .col-md-4>
+                        <p>
+                    <div .col-md-4>
+                        <h1>
+                            Livro: #{livroNome resultlivro}
+                        <p> 
+                            Autor: #{livroAutor resultlivro}
+                        <p> 
+                            ISBN: #{livroIsbn resultlivro}
+                        <p> 
+                            Capa Livro: <img src=#{livroCapalivro resultlivro} style="max-width:100%;">
+                        <p> 
+                            Banner Livro: <img src=#{livroBannerlivro resultlivro} style="max-width:100%;">
+                        <p> 
+                            Descrição: #{livroDescricao resultlivro}
+                        <p>
+                            Categoria: #{livroCategoria resultlivro}
+                        <a href= >    
+                            Doação
           
         |]
 

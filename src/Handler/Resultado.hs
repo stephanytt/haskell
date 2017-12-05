@@ -21,6 +21,10 @@ postResultR = do
             --faz o lambda pra retornar as infos do livro(id, livro e suas infos)
             livros <- sequence $ map (\livro -> return (entityKey livro, entityVal livro)) resultlivro
             defaultLayout $ do
+                setTitle . fromString $ "Resultado | Sharebooks - Compartilhando histórias"
+                addStylesheet $ StaticR css_bootstrap_css
+                toWidget $ $(luciusFile "templates/cadUser.lucius")
+                $(whamletFile "templates/menuinterno.hamlet")
                 [whamlet|
                     $forall (id, livro) <- livros   
                         <div>
