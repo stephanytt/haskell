@@ -5,7 +5,7 @@
                 <div .jumbotron>
                     <h1 .tit>
                         Compartilhando histórias
-        <div .row>
+        <div .row .sobre>
             <div .col-md-8>
                 <h2>
                     Plataforma para transações de livros

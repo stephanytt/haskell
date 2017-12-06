@@ -112,11 +112,21 @@ input[type="submit"]:hover{
     background-color: #16767a;
 }
 
-body{
-    background-color: red
+.col-md-12, .container .jumbotron, .container-fluid .jumbotron{
+    padding: 0
+}
+
+main{
+    margin-top: -1%;
 }
 
 .barra{
-    backgrund-color: pink;
-    padding: 1% 0
+    backgrund-color: #3da8ad;
+    padding: 0.5% 0
+}
+
+.sobre{
+    background: url(@{StaticR img_textura_png});
+    padding: 6%;
+    color: #fff
 }
