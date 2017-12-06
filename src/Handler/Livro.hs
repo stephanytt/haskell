@@ -90,7 +90,7 @@ getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livr
                             Descrição: #{livroDescricao resultlivro}
                         <p>
                             Categoria: #{livroCategoria resultlivro}
-                        <a href= >    
+                        <a href=@{SolicitR livroid} >    
                             Doação
           
         |]
