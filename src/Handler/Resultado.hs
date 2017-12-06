@@ -30,13 +30,23 @@ postResultR = do
                 $(whamletFile "templates/menuinterno.hamlet")
                 [whamlet|
                     $forall (id, livro) <- livros   
-                        <div>
-                            <p>
-                                Livro : #{livroNome livro} 
-                            <p>
-                                Autor: #{livroAutor livro}
-                            <p> 
-                                Categoria : #{livroCategoria livro}
+                        <div .container-fluid>
+                            <div .row>
+                                <div .col-md-4>
+                                    <p>
+                                    
+                                <div .col-md-4>
+                                    <p>
+                                        Livro : #{livroNome livro} 
+                                    <p>
+                                        Autor: #{livroAutor livro}
+                                    <p> 
+                                        Categoria : #{livroCategoria livro}
+                                    <p>
+                                        
+                    <p>
+                        Não encontrou o livro? <a href=@{CadLivroR}>
+                            Cadastre-o agora
                 |]
         _ -> redirect PesquisaR        
 selectLivros :: Text -> Handler [Entity Livro]

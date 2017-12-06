@@ -12,6 +12,9 @@
     <div .collapse .navbar-collapse id="bs-example-navbar-collapse-1">
         <ul .nav .navbar-nav .navbar-right>
             <li>
+                <a href=@{PesquisaR}>
+                    Pesquisar Livro
+            <li>
                 <a href=@{PerfilUserR userId}>
                     Meu Perfil
             <li>
