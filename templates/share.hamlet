@@ -6,6 +6,15 @@
                     <h1 .tit>
                         Compartilhando histórias
         <div .row>
+            <div .col-md-8>
+                <h2>
+                    Plataforma para transações de livros
+                <p>
+                    O Sharebooks é uma ferramenta desenvolvida em 2017 para o projeto de conclusão de curso (TCC) da turma de Sistemas para Internet do 1º semestre de 2015.
+                <a>
+                    >> Conheça o Sharebooks
+        
+        <div .row>
             <div .col-md-4>
                 <div .thumbnail>
                     <img .ico src=@{StaticR img_emprestimo_png}>
@@ -26,7 +35,19 @@
                     <div .caption>
                         <h3>
                             Ajude e seja ajudado.
-
+        
+        <div .row>
+            <div .col-md-4>
+            <div .col-md-4>
+                <h2>
+                    Quer saber como funciona?
+                <a>
+                    Fique por dentro
+            <div .col-md-4>
+        
+        <div .row>
+            <div .col-md-12 .barra>
+                
 <footer>
     <nav .navbar .navbar-inverse .navbar-static-bottom>
         <div .container-fluid>

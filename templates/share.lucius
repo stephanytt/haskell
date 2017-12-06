@@ -111,3 +111,12 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background-color: #16767a;
 }
+
+body{
+    background-color: red
+}
+
+.barra{
+    backgrund-color: pink;
+    padding: 1% 0
+}

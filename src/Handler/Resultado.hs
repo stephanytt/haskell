@@ -47,6 +47,11 @@ postResultR = do
                     <p>
                         Não encontrou o livro? <a href=@{CadLivroR}>
                             Cadastre-o agora
+                    <footer>
+                        <nav .navbar .navbar-inverse .navbar-static-bottom>
+                            <div .container-fluid>
+                                <p .navbar-text .navbar-right>Sharebooks 2017. Todos os direitos reservados.&nbsp;</p>
+
                 |]
         _ -> redirect PesquisaR        
 selectLivros :: Text -> Handler [Entity Livro]

@@ -38,5 +38,9 @@ getPesquisaR = do
                                                         <form action=@{ResultR} method=post enctype=#{enctype}>
                                                                 ^{widget}
                                                                 <input type="submit" value="Pesquisar">
+                        <footer>
+                                <nav .navbar .navbar-inverse .navbar-fixed-bottom>
+                                        <div .container-fluid>
+                                                <p .navbar-text .navbar-right>Sharebooks 2017. Todos os direitos reservados.&nbsp;</p>
                 |]
                 

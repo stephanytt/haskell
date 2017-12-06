@@ -37,14 +37,20 @@ getCadLivroR = do
         toWidget $ $(luciusFile "templates/cadUser.lucius")
         $(whamletFile "templates/menuinterno.hamlet")
         [whamlet|
-            <div .container-fluid>
-                <div .row>
-                    <div .col-md-4>
-                        <p>
-                    <div .col-md-4>
-                        <form action=@{CadLivroR} method=post enctype=#{enctype}>
-                            ^{widget}
-                            <input type="submit">
+            <main>
+                <div .container-fluid>
+                    <div .row>
+                        <div .col-md-4>
+                            <p>
+                        <div .col-md-4>
+                            <form action=@{CadLivroR} method=post enctype=#{enctype}>
+                                ^{widget}
+                                <input type="submit">
+            <footer>
+                <nav .navbar .navbar-inverse .navbar-static-bottom>
+                    <div .container-fluid>
+                        <p .navbar-text .navbar-right>Sharebooks 2017. Todos os direitos reservados.&nbsp;</p>
+
         |]
 
 postCadLivroR :: Handler Html
