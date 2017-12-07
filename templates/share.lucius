@@ -128,5 +128,42 @@ main{
 .sobre{
     background: url(@{StaticR img_textura_png});
     padding: 6%;
-    color: #fff
+    color: #fff;
+    margin-top: -2.5%;
+}
+
+.tipos{
+    padding: 5% 0;
+}
+
+.thumbnail{
+    border: none;
+}
+
+.funciona{
+    background: url(@{StaticR img_funciona_jpg});
+    background-size: 100%;
+    padding: 6%;
+    color: #fff;
+    margin-top: -2.5%;
+    text-align: center
+}
+
+.funciona a{
+    border: 1px solid #fff;
+    padding: 2%;
+    margin-top: 1%;
+    color: #FFF;
+}
+
+footer{
+    margin-top: -1%;
+}
+
+.navbar-inverse, .navbar-default{
+    background: url(@{StaticR img_textura_png}) !important;
+}
+
+.navbar-brand > img{
+    margin-top: -1%    
 }

@@ -14,7 +14,7 @@
                 <a>
                     >> Conheça o Sharebooks
         
-        <div .row>
+        <div .row .tipos>
             <div .col-md-4>
                 <div .thumbnail>
                     <img .ico src=@{StaticR img_emprestimo_png}>
@@ -36,14 +36,14 @@
                         <h3>
                             Ajude e seja ajudado.
         
-        <div .row>
-            <div .col-md-4>
-            <div .col-md-4>
+        <div .row .funciona>
+            <div .col-md-3>
+            <div .col-md-6>
                 <h2>
                     Quer saber como funciona?
                 <a>
                     Fique por dentro
-            <div .col-md-4>
+            <div .col-md-3>
         
         <div .row>
             <div .col-md-12 .barra>
