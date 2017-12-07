@@ -32,7 +32,6 @@ instance Yesod App where
     isAuthorized LoginR _ = return Authorized
     isAuthorized CadUserR _ = return Authorized
     isAuthorized (StaticR _) _ = return Authorized
-    isAuthorized CadLivroR _ = return Authorized
     isAuthorized (VerLivroR _) _ = return Authorized
     isAuthorized _ _ = ehUsuario
     
