@@ -175,3 +175,19 @@ footer{
 .pagsobre{
     text-align: center
 }
+
+.pagsobre h2{
+    margin-bottom: 2%;
+    color: #3da8ad
+}
+
+.space{
+    padding: 5% 0;
+    width: 85%;
+    margin: 0 auto
+}
+
+.somos img{
+    width: 40%;
+    border-radius: 50%;
+}

@@ -18,7 +18,7 @@
                 <h2>
                     Quem somos?
         
-        <div .row>
+        <div .row .somos>
             <div .col-md-4>
                 <div .thumbnail>
                     <img .ico src=@{StaticR img_brenda_jpg}>
