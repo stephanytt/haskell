@@ -112,34 +112,6 @@ getListarUserR = do
                                     
         |]
 
---getSolRecebidaR :: Handler Html
---getSolRecebidaR = do
---    (Just user) <- lookupSession "IdUser"
---    Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
---    solicitacoes <- runDB $ selectList [UsuarioId ==. userId] 
---    defaultLayout $ do
---        setTitle . fromString $ "Solicitações Recebidas | Sharebooks - Compartilhando histórias"
---        addStylesheet $ StaticR css_bootstrap_css
---        toWidget $ $(luciusFile "templates/cadUser.lucius")
---        $(whamletFile "templates/menuinterno.hamlet")
---        [whamlet|
---            <table>
---                <thead>
---                    <tr>
---                        <th>
---                            Livro Solicitado
---                        <th>
---                            Data
---                <tbody>
---                    $forall (Entity solicitaid solicitacao) <- solicitacoes
---                        <tr>
---                            <td>
---                                #{solicitacaoLivrosolicitado solicitacao}
---                            <td>
---                                #{solicitacaoDatasolicitacao solicitacao}
---
---        |]
-
 postApagarUserR :: UsuarioId -> Handler Html
 postApagarUserR usuarioid = do
     _ <- runDB $ get404 usuarioid

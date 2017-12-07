@@ -13,11 +13,17 @@
         <ul .nav .navbar-nav .navbar-right>
             <li>
                 <a href=@{PesquisaR}>
-                    Pesquisar Livro
+                    Procurar Livro
+            <li>
+                <a href=@{CadLivroR}>
+                    Oferecer Livro
+            <li>
+                <a href=@{VerestanteR}>
+                    Minha Estante
             <li>
                 <a href=@{PerfilUserR userId}>
                     Meu Perfil
-                    
+
             <li>
                 <a href=@{LogoutR}>
                     Sair

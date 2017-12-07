@@ -63,7 +63,7 @@ postCadLivroR = do
             (Just user) <- lookupSession "IdUser"
             Just (Entity userId _) <- runDB $ selectFirst [UsuarioId ==. ( P.read . unpack $ user) ] []
             eid <- runDB $ insert (Estante userId idLivro "Bom" 0) :: Handler EstanteId
-            redirect (VerLivroR idLivro)
+            redirect (VerestanteR)
         _ -> redirect ShareR
 
 getVerLivroR :: LivroId -> Handler Html
