@@ -3,7 +3,7 @@
         <div .row>
             <div .col-md-4>
                 <p>
-            <div .col-md-4>
+            <div .col-md-4 .form-cadastro>
                 <form action=@{CadUserR} method=post enctype=#{enctype} .form-horizontal>
                     ^{widget}
                     <input type="submit" value="Cadastrar">

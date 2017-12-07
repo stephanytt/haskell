@@ -33,7 +33,7 @@ getLoginR = do
                                 $maybe mensa <- msg
                                     ^{mensa}
 
-                        <div .col-md-4>
+                        <div .col-md-4 .meulogin>
                             <form action=@{LoginR} method=post enctype=#{enctype}>
                                 ^{widget}
                                 <input type="submit" value="Entrar">

@@ -102,7 +102,7 @@ input[type="submit"]{
     background-color: #3da8ad;
     color: #fff;
     cursor: pointer;
-    width: 104.8%;
+    width: 100%;
     margin-top: 6%;
     padding: 3% 2%;
     transition: 1s background-color;
@@ -110,4 +110,98 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
     background-color: #16767a;
+}
+
+.col-md-12, .container .jumbotron, .container-fluid .jumbotron{
+    padding: 0
+}
+
+main{
+    margin-top: -1%;
+}
+
+.barra{
+    backgrund-color: #3da8ad;
+    padding: 0.5% 0
+}
+
+.sobre{
+    background: url(@{StaticR img_textura_png});
+    padding: 6%;
+    color: #fff;
+    margin-top: -2.5%;
+}
+
+.tipos{
+    padding: 5% 0;
+}
+
+.thumbnail{
+    border: none;
+}
+
+.funciona{
+    background: url(@{StaticR img_funciona_jpg});
+    background-size: 100%;
+    padding: 6%;
+    color: #fff;
+    margin-top: -2.5%;
+    text-align: center
+}
+
+.funciona a{
+    border: 1px solid #fff;
+    padding: 2%;
+    margin-top: 1%;
+    color: #FFF;
+}
+
+footer{
+    margin-top: -1%;
+    clear: both
+}
+
+.navbar-inverse, .navbar-default{
+    background: url(@{StaticR img_textura_png}) !important;
+}
+
+.navbar-brand > img{
+    margin-top: -1%    
+}
+
+.jumbotron .texto{
+    padding: 5% 0;
+}
+
+.pagsobre{
+    text-align: center
+}
+
+.pagsobre h2{
+    margin-bottom: 2%;
+    color: #3da8ad
+}
+
+.space{
+    padding: 5% 0;
+    width: 85%;
+    margin: 0 auto
+}
+
+.somos img{
+    width: 40%;
+    border-radius: 50%;
+}
+
+.form-cadastro{
+    padding: 2% 0;
+    margin-bottom: 5%
+}
+
+.required{
+    margin-bottom: 3%;
+}
+
+.meulogin{
+    padding-top: 5%
 }
