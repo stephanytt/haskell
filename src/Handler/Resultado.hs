@@ -29,7 +29,7 @@ postResultR = do
                 toWidget $ $(luciusFile "templates/cadUser.lucius")
                 $(whamletFile "templates/menuinterno.hamlet")
                 [whamlet|
-                    $forall (id, livro) <- livros   
+                    $forall (Entity livroid livro) <- resultlivro  
                         <div .container-fluid>
                             <div .row>
                                 <div .col-md-4>
@@ -37,18 +37,19 @@ postResultR = do
                                     
                                 <div .col-md-4>
                                     <p>
-                                        Livro : #{livroNome livro} 
+                                        <a href=@{VerLivroR livroid}>
+                                            Livro : #{livroNome livro} 
                                     <p>
                                         Autor: #{livroAutor livro}
                                     <p> 
                                         Categoria : #{livroCategoria livro}
-                                    <p>
+                                    <hr>
                                         
                     <p>
                         Não encontrou o livro? <a href=@{CadLivroR}>
                             Cadastre-o agora
                     <footer>
-                        <nav .navbar .navbar-inverse .navbar-static-bottom>
+                        <nav .navbar .navbar-inverse .navbar-fixed-bottom>
                             <div .container-fluid>
                                 <p .navbar-text .navbar-right>Sharebooks 2017. Todos os direitos reservados.&nbsp;</p>
 
