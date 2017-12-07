@@ -1,18 +1,18 @@
-<main>
+<main .cont>
     <div .container-fluid>
         <div .row>
             <div .col-md-2>
                 <img src=@{StaticR img_perfil_png} style=max-width:100% alt=Perfil>
-            <div .col-md-5>
+            <div .col-md-4>
                 <h1>
-                    Perfil
+                    Meu perfil
                 <h2>
                     #{usuarioNome usuario}
                 <h3>
                     #{usuarioEmail usuario}
                 <h3>
                     #{usuarioCidade usuario} - #{usuarioEstado usuario}
-            <div .col-md-5>
+            <div .col-md-6>
                 <iframe
                     width=100%
                     height=450

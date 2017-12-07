@@ -29,12 +29,17 @@ getPesquisaR = do
                 toWidget $ $(luciusFile "templates/cadUser.lucius")
                 $(whamletFile "templates/menuinterno.hamlet")
                 [whamlet|
-                        <main>
+                        <main .cont>
                                 <div .container-fluid>
                                         <div .row>
-                                                <div .col-md-4>
+                                                <div .col-md-3>
                                                         <p>
-                                                <div .col-md-4>
+                                                <div .col-md-6 .form-pesquisa>
+                                                        <h1>
+                                                                Pesquisa
+                                                        <p>
+                                                                Adicione um livro à sua estante
+                                                        <br>
                                                         <form action=@{ResultR} method=post enctype=#{enctype}>
                                                                 ^{widget}
                                                                 <input type="submit" value="Pesquisar">

@@ -205,3 +205,32 @@ footer{
 .meulogin{
     padding-top: 5%
 }
+
+.cont{
+    margin: 4% 0;
+    width: 85%;
+    margin: 0 auto;
+    padding: 3% 0;
+}
+
+.cont h1{
+    color: #3da8ad;
+    margin-top: 0
+}
+
+.hidden{
+    display: none
+}
+
+.form-pesquisa{
+    padding-top: 4%;
+    text-align: center
+}
+
+.form-pesquisa form{
+    text-align: left
+}
+
+.form-pesquisa form input[type="submit"]{
+    margin-top: -5%;
+}
