@@ -234,3 +234,8 @@ footer{
 .form-pesquisa form input[type="submit"]{
     margin-top: -5%;
 }
+
+.cadastro-livro{
+    margin-bottom: 5%;
+    padding: 3% 0
+}

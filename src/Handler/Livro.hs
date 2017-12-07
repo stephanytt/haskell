@@ -78,10 +78,10 @@ getVerLivroR livroid = do -- da o erro / se der certo ele pesquisa na table livr
         $(whamletFile "templates/menuinterno.hamlet")
         [whamlet|
             <div .container-fluid>
-                <div .row>
-                    <div .col-md-4>
+                <div .row .cadastro-livro>
+                    <div .col-md-3>
                         <p>
-                    <div .col-md-4>
+                    <div .col-md-6>
                         <h1>
                             Livro: #{livroNome resultlivro}
                         <p> 
